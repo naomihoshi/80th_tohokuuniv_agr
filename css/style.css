@@ -812,4 +812,48 @@ body {
   #message .row.g-3 {
     gap: 0.75rem;
   }
+
+}
+
+/* ============================================
+   バッジの色分け統一
+   ============================================ */
+
+/* 基本スタイル */
+.notice-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-right: 0.5rem;
+  /* デフォルトカラー（bg-*がない場合） */
+  background-color: var(--primary-green);
+}
+
+/* イベント・予定 - 青系 */
+.notice-badge.bg-info {
+  background-color: #0dcaf0 !important;
+}
+
+/* 募集・寄付 - 緑系 */
+.notice-badge.bg-success {
+  background-color: var(--primary-green) !important;
+}
+
+/* お知らせ・重要 - 黄色系 */
+.notice-badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important; /* 視認性のため黒文字 */
+}
+
+/* ニュース・新着 - グレー系 */
+.notice-badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+/* 終了・締切 - 赤系 */
+.notice-badge.bg-danger {
+  background-color: #dc3545 !important;
 }
