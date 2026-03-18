@@ -812,7 +812,6 @@ body {
   #message .row.g-3 {
     gap: 0.75rem;
   }
-
 }
 
 /* ============================================
@@ -856,4 +855,228 @@ body {
 /* 終了・締切 - 赤系 */
 .notice-badge.bg-danger {
   background-color: #dc3545 !important;
+}
+
+/* =====================================================
+   情報配信登録セクション - Newsletter Card Styles (目立つ改善版)
+   ===================================================== */
+
+.newsletter-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  /* より濃いグリーン背景で視認性UP */
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%) !important;
+  border: 2px solid #66BB6A !important;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2) !important;
+}
+
+.newsletter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1B5E20, #2E7D32, #4CAF50, #66BB6A);
+}
+
+.newsletter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(76, 175, 80, 0.3) !important;
+  border-color: #4CAF50 !important;
+}
+
+/* アイコンボックス - より目立つデザイン */
+.newsletter-icon-box {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.35);
+  position: relative;
+}
+
+/* アイコンに輝きエフェクト */
+.newsletter-icon-box::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+  border-radius: 16px;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.newsletter-icon-box .material-icons {
+  font-size: 2.2rem;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+/* 見出し - より大きく */
+.newsletter-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1B5E20;
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+/* 説明文 */
+.newsletter-description {
+  font-size: 0.9rem;
+  color: #2E7D32;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ボタン - より大きく目立つデザイン */
+.btn-newsletter {
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #FFFFFF !important;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  white-space: nowrap;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.4);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+
+.btn-newsletter:hover {
+  background: linear-gradient(135deg, #0D3818 0%, #1B5E20 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(27, 94, 32, 0.5);
+  border-color: #E8F5E9 !important;
+}
+
+.btn-newsletter:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 10px rgba(27, 94, 32, 0.4);
+}
+
+.btn-newsletter:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(27, 94, 32, 0.3);
+}
+
+/* ボタン内アイコン */
+.btn-newsletter .material-icons {
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 991px) {
+  .newsletter-card .row {
+    text-align: center;
+  }
+  
+  .newsletter-card .col-auto:first-child {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .newsletter-card .col {
+    text-align: center;
+  }
+  
+  .newsletter-card .col-auto:last-child {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .btn-newsletter {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletter-card {
+    padding: 1.5rem !important;
+  }
+  
+  .newsletter-icon-box {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .newsletter-icon-box .material-icons {
+    font-size: 2rem;
+  }
+  
+  .newsletter-heading {
+    font-size: 1rem;
+  }
+  
+  .newsletter-description {
+    font-size: 0.85rem;
+  }
+  
+  .btn-newsletter {
+    font-size: 0.9rem !important;
+    padding: 0.65rem 1.75rem !important;
+  }
+}
+
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 991px) {
+  .newsletter-card {
+    padding: 1.75rem !important;
+  }
+  
+  .newsletter-description br {
+    display: none;
+  }
+}
+
+/* PC大画面 */
+@media (min-width: 1200px) {
+  .newsletter-card {
+    padding: 1.75rem 2.5rem !important;
+  }
+  
+  .newsletter-icon-box {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .newsletter-icon-box .material-icons {
+    font-size: 2.5rem;
+  }
+  
+  .newsletter-heading {
+    font-size: 1.2rem;
+  }
+  
+  .newsletter-description {
+    font-size: 0.95rem;
+  }
+  
+  .btn-newsletter {
+    font-size: 1.05rem !important;
+    padding: 0.8rem 2.25rem !important;
+  }
 }
